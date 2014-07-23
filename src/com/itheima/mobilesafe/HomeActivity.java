@@ -106,8 +106,10 @@ public class HomeActivity extends Activity {
 
                     sp.edit().putString("password", MD5Utils.md5Password(password)).commit();
                     dialog.dismiss();
-                    //跳转页面
 
+                    //跳转页面
+                    Intent intent = new Intent(HomeActivity.this,LostFindActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(HomeActivity.this, "密码不一致", Toast.LENGTH_LONG).show();
                     return;
@@ -146,6 +148,8 @@ public class HomeActivity extends Activity {
                 if (MD5Utils.md5Password(password).equals(sp.getString("password", null))) {
 
                     dialog.dismiss();
+                    Intent intent = new Intent(HomeActivity.this,LostFindActivity.class);
+                    startActivity(intent);
                   //  Toast.makeText(HomeActivity.this, "caomima", Toast.LENGTH_LONG).show();
                     //进入主页面
                 } else { //匹配失败
