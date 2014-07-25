@@ -124,5 +124,19 @@
         style="@style/text_content_style"
         android:drawableLeft="@android:drawable/star_big_on"
         android:text="远程锁屏:#*lockscreen*#" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:layout_gravity="center"
+        android:text="开启管理员权限"
+        android:onClick="openAdmin"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:layout_gravity="center"
+        android:text="锁屏"
+        android:onClick="lockScreen"/>
 
 </LinearLayout>

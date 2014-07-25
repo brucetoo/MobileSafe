@@ -24,4 +24,14 @@
         android:layout_height="wrap_content" >
     </com.itheima.mobilesafe.ui.SettingItemView>
 
+
+    <com.itheima.mobilesafe.ui.SettingItemView
+        bruce:title="设置来电显示"
+        bruce:desc_on="来电显示功能已开启"
+        bruce:desc_off="来电显示功能已关闭"
+        android:id="@+id/siv_call_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </com.itheima.mobilesafe.ui.SettingItemView>
+
 </LinearLayout>

@@ -47,11 +47,19 @@ public class HomeActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
+                Intent intent;
                 switch (position) {
                     case 8://进入设置中心
-                        Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
+                        intent = new Intent(HomeActivity.this, SettingActivity.class);
                         startActivity(intent);
-
+                        break;
+                    case 7://进入工具中心
+                        intent = new Intent(HomeActivity.this, AToolsActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 1://进入通讯卫士
+                        intent = new Intent(HomeActivity.this, CallSmsSafeActivity.class);
+                        startActivity(intent);
                         break;
                     case 0: //进入防盗设置
                         showLastFoundDialog();
@@ -108,7 +116,7 @@ public class HomeActivity extends Activity {
                     dialog.dismiss();
 
                     //跳转页面
-                    Intent intent = new Intent(HomeActivity.this,LostFindActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, LostFindActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(HomeActivity.this, "密码不一致", Toast.LENGTH_LONG).show();
@@ -124,11 +132,11 @@ public class HomeActivity extends Activity {
             }
         });
         //builder.setView(view);
-    //返回dialog
-    dialog = builder.create();
-    dialog.setView(view,0,0,0,0);
-    dialog.show();
-}
+        //返回dialog
+        dialog = builder.create();
+        dialog.setView(view, 0, 0, 0, 0);
+        dialog.show();
+    }
 
     /**
      * 显示 输入密码对话框
@@ -148,9 +156,9 @@ public class HomeActivity extends Activity {
                 if (MD5Utils.md5Password(password).equals(sp.getString("password", null))) {
 
                     dialog.dismiss();
-                    Intent intent = new Intent(HomeActivity.this,LostFindActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, LostFindActivity.class);
                     startActivity(intent);
-                  //  Toast.makeText(HomeActivity.this, "caomima", Toast.LENGTH_LONG).show();
+                    //  Toast.makeText(HomeActivity.this, "caomima", Toast.LENGTH_LONG).show();
                     //进入主页面
                 } else { //匹配失败
                     Toast.makeText(HomeActivity.this, "密码错误", Toast.LENGTH_LONG).show();
@@ -168,7 +176,7 @@ public class HomeActivity extends Activity {
         builder.setView(view);
         //返回dialog
         dialog = builder.show();
-        dialog.setView(view,0,0,0,0);
+        dialog.setView(view, 0, 0, 0, 0);
     }
 
     /**
